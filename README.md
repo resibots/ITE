@@ -3,8 +3,8 @@
 This package contains code for running the Intelligent Trial & Error Algorithm experiments on our hexapod. See the [paper] for more information.
 
 ## Authors
-Original author : Antoine Cully
-Other contributions: Jean-Baptiste Mouret
+- Original author : Antoine Cully
+- Other contributions: Jean-Baptiste Mouret
 
 ## UNDER CONSTRUCTION
 
