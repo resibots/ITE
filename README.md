@@ -1,4 +1,4 @@
-# ITE_hexapod
+# Intelligent Trial & Error (Limbo module)
 
 This package contains code for running the Intelligent Trial & Error Algorithm experiments on our hexapod. See the [paper] for more information:
 Cully, Antoine, Jeff Clune, Danesh Tarapore, and Jean-Baptiste Mouret. "Robots that can adapt like animals." Nature 521, no. 7553 (2015): 503-507.
