@@ -1,6 +1,11 @@
 # ITE_hexapod
 
-This package contains code for running the Intelligent Trial & Error Algorithm experiments on our hexapod. See the [paper] for more information.
+This package contains code for running the Intelligent Trial & Error Algorithm experiments on our hexapod. See the [paper] for more information:
+Cully, Antoine, Jeff Clune, Danesh Tarapore, and Jean-Baptiste Mouret. "Robots that can adapt like animals." Nature 521, no. 7553 (2015): 503-507.
+
+
+Video:
+https://www.youtube.com/watch?v=T-c17RKh3uE
 
 ## Authors
 - Original author : Antoine Cully
