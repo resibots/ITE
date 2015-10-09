@@ -496,12 +496,12 @@ int main(int argc,char** argv)
 	  brokenleg.push_back(atoi(argv[i]));
 	}
     }
-  init_simu(argc, argv,true);//,brokenleg);
+  init_simu(argc, argv,true,brokenleg);
 #endif
 
 
-  if (argc > 2)
-    lecture(argc, argv);
+  // if (argc > 2)
+  //   lecture(argc, argv);
 
   BOptimizer<Params,model_fun<GP_t>, init_fun<Init_t>, acq_fun<Acqui_t>,inneropt_fun<InnerOpt_t>,stat_fun<Stat_t>, stop_fun<Stop_t> > opt;
   global::res_dir=opt.res_dir();
