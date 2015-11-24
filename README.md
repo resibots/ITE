@@ -31,7 +31,7 @@ https://www.youtube.com/watch?v=T-c17RKh3uE
 - [hexa_control] \(optional\):
     - If you want to run the experiment on the real robot, you need to have the `hexa_control` ROS package to control the robot. See [hexa_control]'s repo for instructions.
 
-### Compiling and Executing the experiment
+### Compiling
 
 - Make sure you have all the dependencies installed/downloaded.
 - Go to your `limbo` root directory
@@ -41,6 +41,23 @@ https://www.youtube.com/watch?v=T-c17RKh3uE
 - Clone ITE: `git clone git@github.com:resibots/ITE.git`
 - Compile the ITE experiment: `./waf --exp ITE`
     - You need to add `--robot true` if you want to run ITE on the real robot
+
+### Executing the experiment
+
+**Nature version**
+
+  ~~~
+  ./build/exp/ITE/hexa_bomean_variant path_to_archive [matern_kernel_l_value] [leg_indices]
+  ~~~
+- **Parameters:**
+  - [] means that the parameter is optional
+  - **the order must be followed**
+  - *hexa_bomean_variant* - there are 2 variants: **hexa_bomean_robot** and **hexa_bomean_graphic**
+  - *path_to_archive* - path for the MAP Elites archive to use
+  - *matern_kernel_l_value* - l value for the matern kernel (optional - 0.4 is the default)
+  - *leg_indices* - leg_indices should not be more than 5 in number and in [0-5] range - this parameter is useful only when simulating
+  - **Example:** `./build/exp/ITE/hexa_bomean_graphic ./exp/ite/archives/archive.dat 0.5 1`
+      - This will run a simulated robot using the "./exp/ite/archives/archive.dat", setting the l value to 0.5 and removing leg 1 from the robot.
 
 
 ## LICENSE
