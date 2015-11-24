@@ -5,8 +5,6 @@
 #include "meanMap.hpp"
 #include "statTransferts.hpp"
 
-#include "tbb/tbb.h"
-
 #ifdef GRAPHIC
 //#define NO_PARALLEL
 #include "renderer/osg_visitor.hh"
