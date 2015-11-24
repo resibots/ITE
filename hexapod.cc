@@ -24,7 +24,7 @@ namespace robot
         /// Definition of robot's params
         // length in meter
         // mass in KG
-      /*      static const double body_mass = 1.6; // with mx 28
+        static const double body_mass = 1.6; // with mx 28
         static const double body_length = 0.20;
         static const double body_width = 0.24;
         static const double body_height = 0.04;
@@ -43,29 +43,7 @@ namespace robot
         static const double legP3_length = 0.145;
 	//        static const double legP3_dist = 0.2;
         static const double legP3_mass = 0.060;
-      */
-
-  static const double battery = 0.292;// white LiPo
-      static const double computer = 0.277;// cf documentation
-      static const double body_mass = 1.6 - battery - computer;  // with the new Mx 28
-      static const double body_length = 0.20;
-      static const double body_width = 0.24;
-      static const double body_height = 0.04;
       
-      static const double legP1_w = 0.02;
-      static const double legP1_length = 0.06;
-      static const double legP1_dist = 0.2;
-      static const double legP1_mass = 0.020;
-      
-      static const double legP2_w = 0.02;
-      static const double legP2_length = 0.085;
-      static const double legP2_dist = 0.2;
-      static const double legP2_mass = 0.184;
-            
-      static const double legP3_w = 0.025;
-      static const double legP3_length = 0.095;
-      static const double legP3_dist = 0.2;
-      static const double legP3_mass = 0.040;
 
 
         /// creation of robot's body
