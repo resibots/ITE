@@ -52,7 +52,7 @@ https://www.youtube.com/watch?v=T-c17RKh3uE
 - **Parameters:**
   - [] means that the parameter is optional
   - **the order must be followed**
-  - *hexa_bomean_variant* - there are 2 variants: **hexa_bomean_robot** and **hexa_bomean_graphic**
+  - *hexa_bomean_variant* - there are 2 variants: **hexa_bomean_robot** (this exists only if you have compiled with `--robot true``) and **hexa_bomean_graphic**
   - *path_to_archive* - path for the MAP Elites archive to use
   - *matern_kernel_l_value* - l value for the matern kernel (optional - 0.4 is the default)
   - *leg_indices* - leg_indices should not be more than 5 in number and in [0-5] range - this parameter is useful only when simulating
