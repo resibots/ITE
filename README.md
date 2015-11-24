@@ -19,11 +19,13 @@ https://www.youtube.com/watch?v=T-c17RKh3uE
 
 - [robdyn]: Dynamic simulator
     - Get the code: `git clone https://github.com/jbmouret/robdyn.git`
-    - Configure for compilation/installation: `./waf configure --prefix=path_to_install`
+    - Configure for compilation/installation: `./waf configure`
     - Compile with `./waf`
-    - Install robdyn on your computer: `sudo ./waf install` (the sudo is required if you are installing the files in the default locations /usr/local/lib and /usr/local/includes).
+    - Install robdyn on your computer: `sudo ./waf install`
+    - For more advanced options, look at [robdyn]'s repo.
 - [limbo]: A lightweight framework for Bayesian and model-based optimisation of black-box functions
     - As limbo is a framework you only need to get the code: `git clone https://github.com/jbmouret/limbo.git`
+    - For more advanced options, look at [limbo]'s repo.
 
 ### Compiling and Executing the experiment
 
