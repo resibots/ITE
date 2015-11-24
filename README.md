@@ -26,6 +26,10 @@ https://www.youtube.com/watch?v=T-c17RKh3uE
 - [limbo]: A lightweight framework for Bayesian and model-based optimisation of black-box functions
     - As limbo is a framework you only need to get the code: `git clone https://github.com/jbmouret/limbo.git`
     - For more advanced options, look at [limbo]'s repo.
+- [ROS] \(optional\):
+    - If you want to run the experiment on the real robot, you need to have ROS installed. Please check the [official instructions](http://www.ros.org/install/) to download and install ROS.
+- [hexa_control] \(optional\):
+    - If you want to run the experiment on the real robot, you need to have the `hexa_control` ROS package to control the robot. See [hexa_control]'s repo for instructions.
 
 ### Compiling and Executing the experiment
 
@@ -47,3 +51,5 @@ https://www.youtube.com/watch?v=T-c17RKh3uE
 [paper]: http://www.nature.com/nature/journal/v521/n7553/full/nature14422.html
 [robdyn]: https://github.com/resibots/robdyn
 [limbo]: https://github.com/resibots/limbo
+[ROS]: http://www.ros.org/
+[hexa_control]: https://github.com/resibots/hexa_control
