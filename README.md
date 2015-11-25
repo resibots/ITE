@@ -42,7 +42,7 @@ https://www.youtube.com/watch?v=T-c17RKh3uE
 - Compile the ITE experiment: `./waf --exp ITE`
     - You need to add `--robot true` if you want to run ITE on the real robot
 
-### Executing the experiment
+## How to Execute an experiment
 
 **Nature version**
 
@@ -54,6 +54,7 @@ https://www.youtube.com/watch?v=T-c17RKh3uE
   - **the order must be followed**
   - *hexa_bomean_variant* - there are 2 variants: **hexa_bomean_robot** (this exists only if you have compiled with `--robot true`) and **hexa_bomean_graphic**
   - *path_to_archive* - path for the MAP Elites archive to use
+      - There are some available archives in the `archives` folder
   - *matern_kernel_l_value* - l value for the matern kernel (optional - 0.4 is the default)
   - *leg_indices* - leg_indices should not be more than 5 in number and in [0-5] range - this parameter is useful only when simulating
   - **Example:** `./build/exp/ITE/hexa_bomean_graphic ./exp/ite/archives/archive.dat 0.5 1`
