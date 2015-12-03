@@ -39,7 +39,7 @@ https://www.youtube.com/watch?v=T-c17RKh3uE
 - Compile limbo with: `./waf`
 - Create an experiment folder (if there's none) and cd to it: `mkdir exp && cd exp`
 - Clone ITE: `git clone git@github.com:resibots/ITE.git`
-- Go back to your limbo root dir
+- Go back to your `limbo` root dir
 - Compile the ITE experiment: `./waf --exp ITE`
     - You need to add `--robot true` if you want to run ITE on the real robot
 
