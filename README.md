@@ -15,7 +15,7 @@ Video (click on it to play):
 *Other parts of the experiments published in the paper:*
 - [limbo]: A lightweight framework for Bayesian and model-based optimisation of black-box functions
 - [Sferes2]: A high-performance, multi-core, lightweight, generic C++98 framework for evolutionary computation.
-- [map_elites_hexapod]
+- [map_elites_hexapod]: MAP-Elites code for the hexapod
 
 ## Authors
 - Original author : Antoine Cully
