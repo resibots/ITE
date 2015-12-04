@@ -1,13 +1,21 @@
 # Intelligent Trial & Error (Limbo experiment)
 
-This package contains code for running the Intelligent Trial & Error Algorithm experiments on our hexapod. See the [paper] for more information:
+#### ITE code for the experiments published in Cully et al. (2015), Nature.
+
+Full reference:
 Cully, Antoine, Jeff Clune, Danesh Tarapore, and Jean-Baptiste Mouret. "Robots that can adapt like animals." Nature 521, no. 7553 (2015): 503-507.
 
+- Author-generated [[pdf]](http://www.isir.upmc.fr/files/2015ACLI3468.pdf)
+- Nature version (paywall) [[html / pdf]](http://www.nature.com/nature/journal/v521/n7553/full/nature14422.html)
 
-Video:
-https://www.youtube.com/watch?v=T-c17RKh3uE
+Video (click on it to play):
 
-#### This is the code corresponding to the Nature paper experiments.
+[![Robots that can adapt like animals](http://img.youtube.com/vi/T-c17RKh3uE/0.jpg)](https://www.youtube.com/watch?v=T-c17RKh3uE "Robots that can adapt like animals")
+
+*Other parts of the experiments published in the paper:*
+- [limbo]: A lightweight framework for Bayesian and model-based optimisation of black-box functions
+- [Sferes2]: A high-performance, multi-core, lightweight, generic C++98 framework for evolutionary computation.
+- [map_elites_hexapod]
 
 ## Authors
 - Original author : Antoine Cully
@@ -24,7 +32,7 @@ https://www.youtube.com/watch?v=T-c17RKh3uE
     - Install robdyn on your computer: `sudo ./waf install`
     - For more advanced options, look at [robdyn]'s repo.
 - [limbo]: A lightweight framework for Bayesian and model-based optimisation of black-box functions
-    - As limbo is a framework you only need to get the code: `git clone https://github.com/jbmouret/limbo.git`
+    - Get the code: `git clone https://github.com/jbmouret/limbo.git`
     - For more advanced options, look at [limbo]'s repo.
 - [ROS] \(optional\):
     - If you want to run the experiment on the real robot, you need to have ROS installed. Please check the [official instructions](http://www.ros.org/install/) to download and install ROS.
@@ -43,7 +51,7 @@ https://www.youtube.com/watch?v=T-c17RKh3uE
 - Compile the ITE experiment: `./waf --exp ITE`
     - You need to add `--robot true` if you want to run ITE on the real robot
 
-## How to Execute an experiment
+## How to execute an experiment
 
 **Nature version**
 
@@ -61,14 +69,21 @@ https://www.youtube.com/watch?v=T-c17RKh3uE
   - **Example:** `./build/exp/ITE/hexa_bomean_graphic ./exp/ite/archives/archive.dat 0.5 1`
       - This will run a simulated robot using the "./exp/ite/archives/archive.dat", setting the l value to 0.5 and removing leg 1 from the robot.
 
+**Generated MAP Elites archives are located in the** `archives` **directory.**
+
+## Funding
+
+This work has been funded by the ANR Creadapt project (ANR-12-JS03-0009) and the European Research Council (ERC) under the European Union’s Horizon 2020 research and innovation programme (grant agreement number 637972 - ResiBots).
+
 
 ## LICENSE
 
 [CeCILL]
 
 [CeCILL]: http://www.cecill.info/index.en.html
-[paper]: http://www.nature.com/nature/journal/v521/n7553/full/nature14422.html
 [robdyn]: https://github.com/resibots/robdyn
 [limbo]: https://github.com/resibots/limbo
 [ROS]: http://www.ros.org/
 [hexa_control]: https://github.com/resibots/hexa_control
+[Sferes2]: https://github.com/sferes2/sferes2
+[map_elites_hexapod]: https://github.com/resibots/map_elites_hexapod
