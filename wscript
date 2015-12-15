@@ -34,9 +34,11 @@
 import limbo
 import ode
 import os
+
 def options(opt):
     opt.add_option('--robdyn', type='string', help='path to robdyn', dest='robdyn')
     opt.add_option('--robot', type='string', help='build also for real robot[true/false]', dest='robot')
+    opt.add_option('--disable-graphics', type='string', help='disable graphics', dest='disableg')
 
 def build(bld):
     libs = 'ODE EIGEN ROBDYN BOOST BOOST_TIMER BOOST_SYSTEM BOOST_THREAD BOOST_SERIALIZATION BOOST_FILESYSTEM DYNAMIXEL LIMBO SFERES2 BOOST_CHRONO RT'
@@ -54,7 +56,7 @@ def build(bld):
 
     bld.get_env()['INCLUDES_ROBDYN']= robdyn_includes
     bld.get_env()['LIBPATH_ROBDYN']= robdyn_libs
-    bld.get_env()['LIB_ROBDYN']=['robdyn','robdyn_osgvisitor']
+    bld.get_env()['LIB_ROBDYN']=['robdyn']
 
     if bld.options.robot and bld.options.robot == 'true':
       bld.get_env()['INCLUDES_ROS']= '/opt/ros/' + os.environ['ROS_DISTRO'] + '/include'
@@ -65,10 +67,12 @@ def build(bld):
 
       libs += ' HEXACONTROL ROS'
 
-    libs += ' OSG'
-    bld.get_env()['LIB_OSG'] = ['osg','osgGA', 'osgDB', 'osgUtil',
-                           'osgViewer', 'OpenThreads',
-                           'osgFX', 'osgShadow']
+    if not bld.options.disableg or bld.options.disableg == 'false':
+        bld.get_env()['LIB_ROBDYN'].append('robdyn_osgvisitor')
+        libs += ' OSG'
+        bld.get_env()['LIB_OSG'] = ['osg','osgGA', 'osgDB', 'osgUtil',
+                            'osgViewer', 'OpenThreads',
+                            'osgFX', 'osgShadow']
 
 
     ode.check_ode(bld)
@@ -81,13 +85,20 @@ def build(bld):
               uselib =  libs,
               use = 'limbo')
 
-    obj = bld(features = 'cxx cxxstlib',
-              source = 'simu.cpp controllerDuty.cpp hexapod.cc',
-              includes = '. .. ../../',
-              target = 'hexapod_graphic',
-              uselib =  libs,
-              cxxflags = ['-DGRAPHIC'],
-              use = 'limbo')
+    if not bld.options.disableg or bld.options.disableg == 'false':
+      obj = bld(features = 'cxx cxxstlib',
+                source = 'simu.cpp controllerDuty.cpp hexapod.cc',
+                includes = '. .. ../../',
+                target = 'hexapod_graphic',
+                uselib =  libs,
+                cxxflags = ['-DGRAPHIC'],
+                use = 'limbo')
+      limbo.create_variants(bld,
+                            source = 'hexa_bomean.cpp',
+                            uselib_local = 'limbo hexapod_graphic',
+                            uselib = libs,
+                            includes=". ../../src ../ ",
+                            variants = ['GRAPHIC'])
 
     if bld.options.robot and bld.options.robot == 'true':
       limbo.create_variants(bld,
@@ -99,7 +110,7 @@ def build(bld):
 
     limbo.create_variants(bld,
                           source = 'hexa_bomean.cpp',
-                          uselib_local = 'limbo hexapod_graphic',
+                          uselib_local = 'limbo hexapod',
                           uselib = libs,
                           includes=". ../../src ../ ",
-                          variants = ['GRAPHIC'])
+                          variants = ['SIMU'])

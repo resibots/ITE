@@ -50,6 +50,7 @@ Video (click on it to play):
 - Go back to your `limbo` root dir
 - Compile the ITE experiment: `./waf --exp ITE`
     - You need to add `--robot true` if you want to run ITE on the real robot
+    - You can add `--disable-graphics true` if you want to not build the graphic version (requires OSG)
 
 ## How to execute an experiment
 
